@@ -1,4 +1,4 @@
-# 🤟 Libras Sign Recognition API
+# Libras Sign Recognition API
 
 API para reconhecimento de sinais do alfabeto em Libras utilizando Visão Computacional e Machine Learning.
 
@@ -7,7 +7,7 @@ O resultado é disponibilizado através de uma API REST construída com FastAPI.
 
 ---
 
-## 📌 Arquitetura
+## Arquitetura
 
 
 Webcam
@@ -18,7 +18,7 @@ MediaPipe (Hand Tracking)
 ↓
 Extração de Landmarks
 ↓
-Modelo Machine Learning (Scikit-Learn)
+Modelo de Machine Learning (Scikit-Learn)
 ↓
 FastAPI
 ↓
@@ -27,7 +27,7 @@ Resposta JSON
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 | Tecnologia      | Finalidade |
 |---------------|------------|
@@ -41,7 +41,7 @@ Resposta JSON
 
 ---
 
-## 📂 Estrutura do Projeto
+## Estrutura do Projeto
 
 
 libras-sign-recognition-api/
@@ -56,39 +56,32 @@ libras-sign-recognition-api/
 
 ---
 
-## 🧠 Ambiente Virtual
+## Ambiente Virtual
 
-Recomenda-se fortemente o uso de um ambiente virtual para:
+Recomenda-se o uso de ambiente virtual para:
 
 - Isolar dependências
 - Evitar conflitos com outros projetos
-- Garantir que o projeto funcione corretamente em diferentes máquinas
+- Garantir reprodutibilidade
 
----
+### Criar ambiente virtual
 
-## ⚙️ Instalação e Execução
-
-### 1️⃣ Clonar o repositório
-
-```bash
-git clone <URL_DO_REPOSITORIO>
-cd libras-sign-recognition-api
-2️⃣ Criar e ativar ambiente virtual
-Windows
+#### Windows
+" ```bash"
 python -m venv venv
 venv\Scripts\activate
-Linux / Mac
+Linux / macOS
 python3 -m venv venv
 source venv/bin/activate
-3️⃣ Instalar dependências
+Instalar dependências
 pip install -r requirements.txt
-📁 Preparação do Dataset
+Preparação do Dataset
 
-Antes de coletar dados, é necessário criar manualmente a pasta:
+Antes da coleta de dados, é necessário criar manualmente a pasta:
 
 dados/
 
-Dentro dela, crie uma subpasta para cada letra que deseja treinar:
+Dentro dela, crie uma subpasta para cada classe (letra) que deseja treinar:
 
 dados/
    ├── A/
@@ -96,23 +89,27 @@ dados/
    ├── C/
    └── D/
 
-Cada subpasta representa uma classe do modelo.
+Cada subpasta representa uma classe do modelo de classificação.
 
-📸 Coleta de Dados
+Coleta de Dados
 
 Execute:
 
 python coletar_dados.py
 
-A webcam será ativada
+Durante a execução:
 
-Posicione a mão representando a letra desejada
+A webcam será ativada.
 
-Os dados serão salvos automaticamente na pasta correspondente
+Posicione a mão representando a letra desejada.
 
-🧠 Treinamento do Modelo
+Os dados extraídos serão armazenados automaticamente na pasta correspondente.
 
-Após coletar os dados:
+A qualidade e diversidade dos dados coletados impactam diretamente a precisão do modelo.
+
+Treinamento do Modelo
+
+Após coletar os dados necessários:
 
 python treinar_modelo.py
 
@@ -124,50 +121,53 @@ Treinar o modelo de classificação
 
 Gerar o arquivo modelo.pkl
 
-🌐 Executando a API
+Execução da API
+
+Inicie o servidor com:
+
 uvicorn api:app --reload
 
 A aplicação ficará disponível em:
 
 http://127.0.0.1:8000
 
-Documentação interativa:
+Documentação interativa da API (Swagger):
 
 http://127.0.0.1:8000/docs
-📤 Exemplo de Resposta
+Exemplo de Resposta
 {
   "letra": "D"
 }
-🎯 Objetivo do Projeto
+Objetivo do Projeto
 
 Este projeto demonstra:
 
 Aplicação prática de Visão Computacional
 
-Treinamento e utilização de modelo de Machine Learning
+Treinamento e inferência de modelo de Machine Learning
 
 Construção de API REST com FastAPI
 
-Estruturação organizada de projeto backend
+Estruturação modular de backend
 
-Possibilidade de integração com outras linguagens (ex: Java)
+Integração possível com aplicações externas (ex: cliente Java)
 
-⚠️ Observações
+Observações
 
-É necessário possuir webcam funcional
+É necessário possuir webcam funcional.
 
-Boa iluminação melhora a precisão
+Boa iluminação melhora significativamente a precisão.
 
-A qualidade do modelo depende da quantidade e variedade de dados coletados
+O desempenho do modelo depende da quantidade e qualidade dos dados coletados.
 
-🔮 Possíveis Evoluções
+Possíveis Evoluções
 
-Expandir para todas as letras do alfabeto
+Expansão para todas as letras do alfabeto
 
-Aumentar o dataset
+Ampliação do dataset
 
-Melhorar o modelo utilizando redes neurais
+Utilização de redes neurais para maior robustez
 
-Criar interface web para visualização
+Desenvolvimento de interface web
 
-Realizar deploy em ambiente de nuvem
+Deploy em ambiente de nuvem
