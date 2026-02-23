@@ -67,7 +67,6 @@ Recomenda-se o uso de ambiente virtual para:
 ### Criar ambiente virtual
 
 #### Windows
-" ```bash"
 python -m venv venv
 venv\Scripts\activate
 Linux / macOS
@@ -84,10 +83,10 @@ dados/
 Dentro dela, crie uma subpasta para cada classe (letra) que deseja treinar:
 
 dados/
-   ├── A/
-   ├── B/
-   ├── C/
-   └── D/
+├── A/
+├── B/
+├── C/
+└── D/
 
 Cada subpasta representa uma classe do modelo de classificação.
 
@@ -99,11 +98,11 @@ python coletar_dados.py
 
 Durante a execução:
 
-A webcam será ativada.
+A webcam será ativada
 
-Posicione a mão representando a letra desejada.
+Posicione a mão representando a letra desejada
 
-Os dados extraídos serão armazenados automaticamente na pasta correspondente.
+Os dados extraídos serão armazenados automaticamente na pasta correspondente
 
 A qualidade e diversidade dos dados coletados impactam diretamente a precisão do modelo.
 
@@ -130,9 +129,7 @@ uvicorn api:app --reload
 A aplicação ficará disponível em:
 
 http://127.0.0.1:8000
-
-Documentação interativa da API (Swagger):
-
+Documentação interativa da API (Swagger)
 http://127.0.0.1:8000/docs
 Exemplo de Resposta
 {
@@ -154,20 +151,8 @@ Integração possível com aplicações externas (ex: cliente Java)
 
 Observações
 
-É necessário possuir webcam funcional.
+É necessário possuir webcam funcional
 
-Boa iluminação melhora significativamente a precisão.
+Boa iluminação melhora significativamente a precisão
 
-O desempenho do modelo depende da quantidade e qualidade dos dados coletados.
-
-Possíveis Evoluções
-
-Expansão para todas as letras do alfabeto
-
-Ampliação do dataset
-
-Utilização de redes neurais para maior robustez
-
-Desenvolvimento de interface web
-
-Deploy em ambiente de nuvem
+O desempenho do modelo depende da quantidade e qualidade dos dados coletados
